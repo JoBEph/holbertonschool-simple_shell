@@ -7,12 +7,13 @@
 
 void prompt(void)
 {
-	char *prompt = "C is not fun $:";
+	char *prompt = "C is not fun $ ";
 	char *lineptr = getcwd(NULL, 0);
 
 	if (isatty(STDIN_FILENO))
 	{
 		write(STDOUT_FILENO, prompt, _strlen(prompt));
+		fflush(stdout);
 	}
 	free(lineptr);
 }
