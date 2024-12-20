@@ -10,5 +10,8 @@
 
 /* Prototypes de function */
 
+int _strlen(char *s);
+void prompt(void);
+char *readline(void);
 
 #endif
