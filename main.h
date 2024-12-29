@@ -13,5 +13,8 @@
 int _strlen(char *s);
 void prompt(void);
 char *readline(void);
+char *_strcpy(char *dest, char *src);
+int _strcmp(char *s1, char *s2);
+void execmd(char **argv);
 
 #endif
