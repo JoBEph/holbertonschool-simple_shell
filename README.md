@@ -46,16 +46,16 @@ $
 
 ### Requirements: 
 
-[x] Allowed editors : vi, vim, emacs
-[x] All your files will be compiled on Ubuntu 20.04 LTS
-[x] Your C programs and functions will be compiled with gcc command, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
-[x] All your files should end with a new line
-[x] README.md file, at the root of the folder of the project is mandatory
-[x] Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl (see link above for the instructions)
-[x] Your shell should not have any memory leaks
-[x] No more than 5 functions per file
-[x] All your header files should be include guarded
-[x] Use system calls only when you need to (why?)
+[x] Allowed editors : vi, vim, emacs <br />
+[x] All your files will be compiled on Ubuntu 20.04 LTS <br />
+[x] Your C programs and functions will be compiled with gcc command, using the options -Wall -Werror -Wextra -pedantic -std=gnu89 <br />
+[x] All your files should end with a new line <br />
+[x] README.md file, at the root of the folder of the project is mandatory <br />
+[x] Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl (see link above for the instructions) <br />
+[x] Your shell should not have any memory leaks <br />
+[x] No more than 5 functions per file <br />
+[x] All your header files should be include guarded <br />
+[x] Use system calls only when you need to (why?) <br />
 
 ### Resources:
 
