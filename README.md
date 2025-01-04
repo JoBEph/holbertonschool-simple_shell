@@ -73,7 +73,9 @@ $
 | `_strcpy.c`     	| Copy 2 strings                                        |
 | `_strdup.c`       | Pointer to a newly allocated space in memory          |
 | `_strlen.c`     	| To print a string                                   	|
+| `_strcat.c`       | Function that concatenate two strings                 |
 | `_strtok.c`     	| Count arguments and break them into tokens          	|
+| `get_file_loc.c`  | Executable PATH of the file                           |
 | `_error.c`      	| Message failure                                     	|
 | `execmd.c`      	| Execute processes                                   	|
 | `main.c`        	| Main function                                       	|
