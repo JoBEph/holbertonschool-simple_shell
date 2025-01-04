@@ -70,7 +70,8 @@ $
 |:---------------:	|-----------------------------------------------------	|
 | `read_prompt.c` 	| Read and print an user command                      	|
 | `_strcmp.c`     	| Compares 2 strings                                  	|
-| `_strcpy.c`     	| Copy 2 strings                                      	|
+| `_strcpy.c`     	| Copy 2 strings                                        |
+| `_strdup.c`       | Pointer to a newly allocated space in memory          |
 | `_strlen.c`     	| To print a string                                   	|
 | `_strtok.c`     	| Count arguments and break them into tokens          	|
 | `_error.c`      	| Message failure                                     	|
