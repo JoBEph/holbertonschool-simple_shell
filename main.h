@@ -17,5 +17,6 @@ char *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 void execmd(char **argv);
 char *strtok(char *token, const char *delim);
+char *_strdup(char *str);
 
 #endif
