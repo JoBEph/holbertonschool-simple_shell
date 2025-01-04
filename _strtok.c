@@ -2,8 +2,8 @@
 
 /**
  * strtok - function to tokenize a string and put into an array
- * token - store token
- * delim - delim to separate the string to token
+ * @token: store token
+ * @delim: delim to separate the string to token
  * Return: array of the string separated
  */
 
@@ -31,7 +31,7 @@ char *strtok(char *token, const char *delim)
 
 	for (i = 0; token != NULL; i++)
 	{
-		argv[i] = malloc(sizeof(char *) *_strlen(token));
+		argv[i] = malloc(sizeof(char *) * _strlen(token));
 		_strcpy(argv[i], token);
 		token = strtok(NULL, delim);
 	}
