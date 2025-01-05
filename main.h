@@ -20,5 +20,6 @@ char *strtok(char *token, const char *delim);
 char *_strdup(char *str);
 char *_strcat(char *dest, char *src);
 char *get_file_loc(char *PATH, char *file_name);
+char *_env(char *cmd);
 
 #endif
