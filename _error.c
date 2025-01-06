@@ -2,7 +2,6 @@
 
 /**
  * _error - function to output an error message
- *
  * Return: an exit failure
 */
 

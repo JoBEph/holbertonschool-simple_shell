@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * main -
+ * @ac:
+ * @av:
+ *
+ * Return:
+*/
+
 int main(int ac, char **av)
 {
 	char *prompt = "C is not fun $ ";

@@ -2,8 +2,8 @@
 
 /**
  * _strdup - pointer to a newly allocated space in memory
- * @str: pointer
- * Return: x
+ * @str: pointer lenght
+ * Return: x allocated pointer
 */
 
 char *_strdup(char *str)

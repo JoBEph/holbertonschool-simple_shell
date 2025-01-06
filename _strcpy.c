@@ -2,9 +2,9 @@
 
 /**
  * _strcpy - function that copies the string pointed
- * @dest: pointer
- * @src: pointer
- * Return: Always 0 (Success)
+ * @dest: pointer of the string copy
+ * @src: pointer of the first string
+ * Return: the string copied (Success)
  */
 
 char *_strcpy(char *dest, char *src)

@@ -19,8 +19,8 @@ void prompt(void)
 }
 
 /**
- * read - read line user
- * Return: line user
+ * readline - function to read line user
+ * Return: line user and EOF
  */
 
 char *readline(void)

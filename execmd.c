@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- *execmd - create new process with fork
- *@argv: array of character poiters listing arguments
- *Return: Void
+ * execmd - create new process with fork
+ * @argv: array of characters pointers listing arguments
+ * Return: nothing (void)
  */
 
 void execmd(char **argv)
