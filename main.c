@@ -8,15 +8,21 @@
  * Return:
 */
 
-int main(int ac, char **av)
+int main(void)
 {
-	char *prompt = "C is not fun $ ";
-	char *lineptr;
-	size_t n = 0;
-	ssize_t read = 0;
+	char *input;
+	prompt();
 
-	(void)ac; (void)av;
+	line = readline();
 
-	while (1)
-
+	if (!line)
+	{
+		continue;
+	}
+	else
+	{
+		return (0);
+		free(line);
+	}
+	execmd(args)
 }
