@@ -22,6 +22,6 @@ char *_strcat(char *dest, char *src);
 char *get_file_loc(char *PATH, char *file_name);
 char *get_file_path(char *file_name);
 int slash(const char *str);
-char *_env(char *cmd);
+
 
 #endif
