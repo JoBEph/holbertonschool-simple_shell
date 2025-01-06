@@ -79,7 +79,7 @@ $
 | `_strlen.c`     	   | To print a string                                     |
 | `_strcat.c`          | Function that concatenate two strings                 |
 | `_strtok.c`     	   | Count arguments and break them into tokens            |
-| `get_file_loc.c`     | Executable PATH of the file                           |
+| `get_file.c`         | Executable PATH of the file and environnement         |
 | `_error.c`      	   | Message failure                                       |
 | `execmd.c`      	   | Execute processes                                     |
 | `main.c`        	   | Main function                                         |
