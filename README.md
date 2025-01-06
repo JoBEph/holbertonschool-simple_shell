@@ -17,6 +17,10 @@ This new project involves rewriting a simple UNIX command interpreter, following
 ```c
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
+### Man command:
+```c
+man man_1_simple_shell
+```
 
 ### Usage:
 
@@ -66,20 +70,21 @@ $
 
 ### Files:
 
-|  **Functions**  	| **Description**                                     	|
-|:---------------:	|-----------------------------------------------------	|
-| `read_prompt.c` 	| Read and print an user command                      	|
-| `_strcmp.c`     	| Compares 2 strings                                  	|
-| `_strcpy.c`     	| Copy 2 strings                                        |
-| `_strdup.c`       | Pointer to a newly allocated space in memory          |
-| `_strlen.c`     	| To print a string                                   	|
-| `_strcat.c`       | Function that concatenate two strings                 |
-| `_strtok.c`     	| Count arguments and break them into tokens          	|
-| `get_file_loc.c`  | Executable PATH of the file                           |
-| `_error.c`      	| Message failure                                     	|
-| `execmd.c`      	| Execute processes                                   	|
-| `main.c`        	| Main function                                       	|
-| `main.h`        	| Header file with functions prototypes and libraries 	|
+|  **Functions**  	   | **Description**                                       |
+|:---------------:	   |-------------------------------------------------------|
+| `read_prompt.c` 	   | Read and print an user command                        |
+| `_strcmp.c`     	   | Compares 2 strings                                    |
+| `_strcpy.c`     	   | Copy 2 strings                                        |
+| `_strdup.c`          | Pointer to a newly allocated space in memory          |
+| `_strlen.c`     	   | To print a string                                     |
+| `_strcat.c`          | Function that concatenate two strings                 |
+| `_strtok.c`     	   | Count arguments and break them into tokens            |
+| `get_file_loc.c`     | Executable PATH of the file                           |
+| `_error.c`      	   | Message failure                                       |
+| `execmd.c`      	   | Execute processes                                     |
+| `main.c`        	   | Main function                                         |
+| `main.h`        	   | Header file with functions prototypes and libraries   |
+| `man_1_simple_shell` | Man page simple shell                                 |
 
 ### Authors:
 
