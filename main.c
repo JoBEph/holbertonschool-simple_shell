@@ -6,23 +6,67 @@
  * @av:
  *
  * Return:
-*/
+ */
 
-int main(void)
+int main(int argc, char **argv)
 {
-	char *input;
-	prompt();
+	(void)argc, (void)argv;
+	char *buffer = NULL, *token, *path;
+	size_t n = 0;
+	ssize_t rline;
+	int i, status;
+	char **array;
+	pid_t child_pid;
 
-	line = readline();
+	while (1)
+	{
+		if (isatty(STDIN_FILENO))
+			write(STDOUT_FILENO, "C is not fun $ ", 15);
 
-	if (!line)
-	{
-		continue;
+		rline = getline(&lineptr, n, stdin);
+
+		if (rline == -1)
+		{
+			exit(0);
+		}
+
+		token = strtok(buffer, " \n");
+
+		array = malloc(sizeof(char*) * 1024);
+		i = 0;
+		while (token)
+		{
+			array[i] = token;
+			token = strtok(NULL, " \n");
+			i++;
+		}
+
+		array[i] = NULL;
+		path = get_file_path(array[0]);
+
+		child_pid = fork();
+
+		if (child_pid == -1)
+		{
+			perror("Failed to create.");
+			exit(41);
+		}
+
+		if (child_pid == 0)
+		{
+			if (execve(path, array, NULL) == -1)
+			{
+				perror("Failed to execute");
+				exit(97);
+			}
+		}
+		else
+		{
+			wait(&status);
+		}
 	}
-	else
-	{
-		return (0);
-		free(line);
-	}
-	execmd(args)
+	free(path);
+	free(buffer);
+	return (0);
 }
+
