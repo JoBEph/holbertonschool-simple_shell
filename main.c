@@ -36,7 +36,14 @@ int main(int argc, char **argv)
 
 		token = strtok(buffer, " \n");
 
-		array = malloc(sizeof(char*) * 1024);
+		array = malloc(sizeof(char *) * 1024);
+		if (array == NULL)
+		{
+			perror("Memory allocation failed");
+			free(buffer);
+			exit(1);
+		}
+
 		i = 0;
 		while (token)
 		{
@@ -53,6 +60,8 @@ int main(int argc, char **argv)
 		if (child_pid == -1)
 		{
 			perror("Failed to create.");
+			free(array);
+			free(path);
 			exit(41);
 		}
 
@@ -63,7 +72,6 @@ int main(int argc, char **argv)
 				perror("Failed to execute");
 				free(path);
 				free(array);
-				free(buffer);
 				exit(97);
 			}
 		}
@@ -77,4 +85,3 @@ int main(int argc, char **argv)
 	free(buffer);
 	return (0);
 }
-
