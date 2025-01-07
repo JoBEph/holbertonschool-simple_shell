@@ -1,17 +1,16 @@
 #include "main.h"
 
 /**
- * main -
- * @ac:
- * @av:
+ * main - function to use a simple shell command and execute
+ * @argc: void (not use in this function)
+ * @argv: void (not use in this function)
  *
- * Return:
- */
+ * Return: Success of the execution (0)
+*/
 
 int main(int argc, char **argv)
 {
-	(void)argc, (void)argv;
-	char *buffer, *token, *path;
+	char *buffer = NULL, *token, *path;
 	size_t n = 0;
 	ssize_t rline;
 	int i, status;
@@ -19,12 +18,14 @@ int main(int argc, char **argv)
 	char *lineptr;
 	pid_t child_pid;
 
+	(void)argc, (void)argv;
+
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "C is not fun $ ", 15);
 
-		rline = getline(&lineptr, n, stdin);
+		rline = getline(&lineptr, &n, stdin);
 
 		if (rline == -1)
 		{
