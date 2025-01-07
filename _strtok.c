@@ -7,38 +7,77 @@
  * Return: array of the string separated
  */
 
-char *strtok(char *token, const char *delim)
+char *strtok(const char *delim)
 {
 	int num_tokens = 0;
 	int i;
-	const char *delim = "\n";
-	char *lineptr_copy = NULL;
+	char *token;
+	char *lineptr_copy;
+	char **argv;
 
-	_strcpy(lineptr_copy, readline);
+	char *readline_input = readline();
+	if (readline_input == NULL)
+	{
+		return (NULL);
+	}
+	lineptr_copy = _strdup(readline_input);
 
-	token = strtok(readline, delim);
-
+	if (lineptr_copy == NULL)
+	{
+		free(readline_input);
+		return (NULL);
+	}
+	token = strtok(lineptr_copy, delim);
 	while (token != NULL)
 	{
 		num_tokens++;
 		token = strtok(NULL, delim);
 	}
-	num_tokens++;
+	argv = malloc(sizeof(char *) * (num_tokens + 1));
+	if (argv == NULL)
+	{
+		free(lineptr_copy);
+		free(readline_input);
+		return (NULL);
+	}
 
-	argv = malloc(sizeof(char *) * num_tokens);
-
-	token = strtok(lineptr_copy, delim);
+	token = strtok(readline_input, delim);
 
 	for (i = 0; token != NULL; i++)
 	{
-		argv[i] = malloc(sizeof(char *) * _strlen(token));
+		argv[i] = malloc(_strlen(token)+ 1);
+		if (argv[i] == NULL)
+		{
+			for (int j = 0; j < i; j++)
+			{
+				free(argv[j]);
+			}
+
+			free(argv);
+			free(lineptr_copy);
+			free(readline_input);
+			return (NULL);
+		}
 		_strcpy(argv[i], token);
 		token = strtok(NULL, delim);
 	}
 	argv[i] = NULL;
+	free(lineptr_copy);
+	free(readline_input);
+	return (argv);
+}
+int main(void)
+{
+	const char *delim = " ";
+	char **tokens = strtok(delim);
 
-	free(argv);
-	free(argv[i]);
-
-	return (lineptr_copy);
+	if (tokens != NULL)
+	{
+		for (int i = 0; tokens[i] != NULL; i++)
+		{
+			printf("Token %d: %s\n", i, tokens[i]);
+			free(tokens[i]);
+		}
+	}
+	return (0);
 }
