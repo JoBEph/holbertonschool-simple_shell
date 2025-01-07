@@ -11,11 +11,12 @@
 int main(int argc, char **argv)
 {
 	(void)argc, (void)argv;
-	char *buffer = NULL, *token, *path;
+	char *buffer, *token, *path;
 	size_t n = 0;
 	ssize_t rline;
 	int i, status;
 	char **array;
+	char *lineptr;
 	pid_t child_pid;
 
 	while (1)
