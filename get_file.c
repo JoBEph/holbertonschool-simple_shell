@@ -20,13 +20,13 @@ int slash(const char *str)
  * Return: full path to the executable file
 */
 
-char *get_file_loc(char *PATH, char *file_name)
+char *get_file_loc(char *path, char *file_name)
 {
 	char *path_copy, *token;
 	struct stat file_path;
 	char *path_buffer = NULL;
 
-	path_copy = _strdup(PATH);
+	path_copy = _strdup(path);
 	token = strtok(path_copy, ":");
 
 	while (token)
