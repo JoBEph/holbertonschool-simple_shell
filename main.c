@@ -15,7 +15,6 @@ int main(int argc, char **argv)
 	ssize_t rline;
 	int i, status;
 	char **array;
-	char *lineptr;
 	pid_t child_pid;
 
 	(void)argc, (void)argv;
@@ -23,9 +22,12 @@ int main(int argc, char **argv)
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
+		{
 			write(STDOUT_FILENO, "C is not fun $ ", 15);
+			fflush(stdout);
+		}
 
-		rline = getline(&lineptr, &n, stdin);
+		rline = getline(&buffer, &n, stdin);
 
 		if (rline == -1)
 		{
@@ -59,6 +61,9 @@ int main(int argc, char **argv)
 			if (execve(path, array, NULL) == -1)
 			{
 				perror("Failed to execute");
+				free(path);
+				free(array);
+				free(buffer);
 				exit(97);
 			}
 		}
@@ -66,8 +71,9 @@ int main(int argc, char **argv)
 		{
 			wait(&status);
 		}
+		free(path);
+		free(array);
 	}
-	free(path);
 	free(buffer);
 	return (0);
 }
