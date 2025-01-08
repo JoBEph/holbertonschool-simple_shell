@@ -8,6 +8,8 @@
  */
 void _free(char *buffer, char **array, char *path)
 {
+	int i; 
+
 	if (buffer != NULL)
 	{
 		free(buffer);
@@ -15,6 +17,10 @@ void _free(char *buffer, char **array, char *path)
 
 	if (array != NULL)
 	{
+		for (i = 0; array[i] != NULL; i++)
+		{
+			free(array[i]);
+		}
 		free(array);
 	}
 
