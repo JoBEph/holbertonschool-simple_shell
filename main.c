@@ -31,6 +31,7 @@ int main(int argc, char **argv)
 
 		if (rline == -1)
 		{
+			free(buffer);
 			exit(0);
 		}
 
@@ -62,6 +63,7 @@ int main(int argc, char **argv)
 			perror("Failed to create.");
 			free(array);
 			free(path);
+			free(buffer);
 			exit(41);
 		}
 
@@ -72,6 +74,7 @@ int main(int argc, char **argv)
 				perror("Failed to execute");
 				free(path);
 				free(array);
+				free(buffer);
 				exit(97);
 			}
 		}
