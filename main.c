@@ -20,12 +20,6 @@ int main(int argc, char **argv)
 		if (line == NULL)
 			break;
 
-		else if (line == -1)
-			exit(1);
-
-		if (buffer == NULL)
-			continue;
-
 		array = token_input(buffer);
 		if (array == NULL)
 		{
