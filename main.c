@@ -10,27 +10,34 @@
 int main(int argc, char **argv)
 {
 	char *buffer = NULL, *path;
-	size_t n = 0;
-	ssize_t rline;
+	char *line;
+	size_t n;
 	char **array;
 	(void)argc, (void)argv;
 	while (1)
 	{
-		if (isatty(STDIN_FILENO))
-		{
-			write(STDOUT_FILENO, "C is not fun $ ", 15);
-			fflush(stdout);
-		}
-		rline = getline(&buffer, &n, stdin);
-		if (rline == -1)
-		{
-			free(buffer);
-			exit(0);
-		}
+		line = read_line(&line, &n);
+		if (line == -2)
+			break;
+
+		else if (line == -1)
+			exit(1);
+
+		if (buffer == NULL)
+			continue;
+
 		array = token_input(buffer);
 		if (array == NULL)
 		{
 			free(buffer);
+			buffer = NULL;
+			continue;
+		}
+		if (array[0] == NULL)
+		{
+			_free(buffer, array, NULL);
+			buffer = NULL;
+			array = NULL;
 			continue;
 		}
 		path = get_file_path(array[0]);
@@ -38,6 +45,9 @@ int main(int argc, char **argv)
 		{
 			perror("Command not found");
 			_free(buffer, array, path);
+			buffer = NULL;
+			array = NULL;
+			path = NULL;
 			continue;
 		}
 		if (fork_exe(array, path) == -1)
@@ -46,6 +56,9 @@ int main(int argc, char **argv)
 			exit(1);
 		}
 		_free(buffer, array, path);
+		buffer = NULL;
+		array = NULL;
+		path = NULL;
 	}
 	free(buffer);
 	return (0);

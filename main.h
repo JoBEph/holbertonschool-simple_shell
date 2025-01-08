@@ -18,5 +18,6 @@ int main(int argc, char **argv);
 int fork_exe(char **array, char *path);
 char **token_input(char *buffer);
 void _free(char *buffer, char **array, char *path);
+char *read_line(char **rline, size_t *buffer);
 
 #endif
