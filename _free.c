@@ -8,19 +8,19 @@
  */
 void _free(char *buffer, char **array, char *path)
 {
-    if (buffer != NULL)
-    {
-        free(buffer);
-    }
-    
-    if (array != NULL)
-    {
-        free(array);
-    }
-    
-    if (path != NULL)
-    {
-        free(path);
-    }
+	if (buffer != NULL)
+	{
+		free(buffer);
+	}
+
+	if (array != NULL)
+	{
+		free(array);
+	}
+
+	if (path != NULL)
+	{
+		free(path);
+	}
 }
 

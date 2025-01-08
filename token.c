@@ -2,7 +2,7 @@
 
 /**
  * token - function tokenise input command
- * @buffer: 
+ * @buffer:
  * Return: array
  */
 
