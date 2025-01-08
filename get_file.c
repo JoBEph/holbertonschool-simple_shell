@@ -8,7 +8,7 @@
 
 int slash(const char *str)
 {
-	if (str != NULL || str[0] == '/')
+	if (str != NULL && str[0] == '/')
 		return (1);
 	return (0);
 }
@@ -40,7 +40,8 @@ char *get_file_loc(char *path, char *file_name)
 		if (!path_buffer)
 		{
 			perror("Error: malloc failed");
-			exit(EXIT_FAILURE);
+			free(path_copy);
+			return (NULL);
 		}
 		_strcpy(path_buffer, token);
 		_strcat(path_buffer, "/");
