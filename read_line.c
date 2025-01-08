@@ -2,9 +2,9 @@
 
 /**
  * read_line - function to read and input command
- * @buffer: buffer
- * @n: n octets
- * Return: ssize_t
+ * @rline: line command to read
+ * @buffer: array of the string
+ * Return: the line command success
  */
 
 char *read_line(char **rline, size_t *buffer)

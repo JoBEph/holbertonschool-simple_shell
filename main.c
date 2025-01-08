@@ -5,7 +5,7 @@
  * @argc: void (not use in this function)
  * @argv: void (not use in this function)
  * Return: Success of the execution (0)
- */
+*/
 
 int main(int argc, char **argv)
 {

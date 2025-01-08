@@ -2,8 +2,8 @@
 
 /**
  * token - function tokenise input command
- * @buffer:
- * Return: array
+ * @buffer: pointer to the string 
+ * Return: array of the string from token
  */
 
 char **token_input(char *buffer)

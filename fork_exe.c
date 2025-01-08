@@ -2,9 +2,9 @@
 
 /**
  * fork_exe - function to process child and parent
- * @array: arguments
+ * @args: array of strings that contains the command and flags
  * @path: path env
- * Return: Success of the process (0)
+ * Return: Success of the process (1)
  */
 
 int fork_exe(char **array, char *path)
@@ -25,7 +25,7 @@ int fork_exe(char **array, char *path)
 	{
 		if (execve(path, array, NULL) == -1)
 		{
-			perror("Failed to execute");
+			perror("Failed to execute.");
 			free(path);
 			free(array);
 			exit(97);
