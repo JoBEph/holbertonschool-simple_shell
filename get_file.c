@@ -27,6 +27,12 @@ char *get_file_loc(char *path, char *file_name)
 	char *path_buffer = NULL;
 
 	path_copy = _strdup(path);
+	if (path_copy == NULL)
+	{
+		perror("Error: strdup failed");
+		return (NULL);
+	}
+
 	token = strtok(path_copy, ":");
 
 	while (token)
@@ -46,7 +52,6 @@ char *get_file_loc(char *path, char *file_name)
 		_strcpy(path_buffer, token);
 		_strcat(path_buffer, "/");
 		_strcat(path_buffer, file_name);
-		_strcat(path_buffer, "\0");
 
 		if (stat(path_buffer, &file_path) == 0 && access(path_buffer, X_OK) == 0)
 		{
@@ -54,7 +59,6 @@ char *get_file_loc(char *path, char *file_name)
 			return (path_buffer);
 		}
 		token = strtok(NULL, ":");
-
 	}
 	free(path_copy);
 	if (path_buffer)
@@ -81,7 +85,6 @@ char *get_file_path(char *file_name)
 		perror("Path not found");
 		return (NULL);
 	}
-
 	full_path = get_file_loc(path, file_name);
 
 	if (full_path == NULL)
@@ -90,6 +93,5 @@ char *get_file_path(char *file_name)
 		write(2, ": command not found\n", 19);
 		return (NULL);
 	}
-
 	return (full_path);
 }

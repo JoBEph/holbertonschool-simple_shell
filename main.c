@@ -66,7 +66,6 @@ int main(int argc, char **argv)
 			free(buffer);
 			exit(41);
 		}
-
 		if (child_pid == 0)
 		{
 			if (execve(path, array, NULL) == -1)
