@@ -17,5 +17,6 @@ int slash(const char *str);
 int main(int argc, char **argv);
 int fork_exe(char **array, char *path);
 char **token_input(char *buffer);
+void _free(char *buffer, char **array, char *path);
 
 #endif

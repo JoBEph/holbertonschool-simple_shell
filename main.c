@@ -49,14 +49,10 @@ int main(int argc, char **argv)
 		}
 		if (fork_exe(array, path) == -1)
 		{
-			free(buffer);
-			free(array);
-			free(path);
+			_free(buffer, array, path);
 			exit(1);
 		}
-		free(buffer);
-		free(array);
-		free(path);
+		_free(buffer, array, path);
 	}
 	free(buffer);
 	return (0);
