@@ -12,7 +12,7 @@ char *read_line(char **rline, size_t *buffer)
 
 	if (isatty(STDIN_FILENO))
 	{
-		write(STDOUT_FILENO, "C is not fun $", 15);
+		write(STDOUT_FILENO, "C is not fun $ ", 15);
 		fflush(stdout);
 	}
 
