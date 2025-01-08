@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	while (1)
 	{
 		line = read_line(&line, &n);
-		if (line == -2)
+		if (line == NULL)
 			break;
 
 		else if (line == -1)
