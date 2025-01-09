@@ -72,19 +72,17 @@ $
 
 |  **Functions**  	   | **Description**                                       |
 |:---------------:	   |-------------------------------------------------------|
-| `read_line.c` 	   | Read and print an user command                        |
 | `_strcmp.c`     	   | Compares 2 strings                                    |
 | `_strcpy.c`     	   | Copy 2 strings                                        |
 | `_strdup.c`          | Pointer to a newly allocated space in memory          |
-| `_strlen.c`     	   | To print a string                                     |
-| `_strcat.c`          | Function that concatenate two strings                 |
-| `_free.c`     	   | free multiple buffers                                 |
+| `_free.c`     	     | Free multiple buffers                                 |
+| `_error.c`           | Error gestion                                         |
 | `get_file.c`         | Executable PATH of the file and environnement         |
-| `token.c`      	   | Strtok function                                       |
-| `fork_exe.c`         | fork function                                         |
+| `token.c`      	     | Strtok function                                       |
+| `_getenv.c`          | Environnement function                                |
 | `main.c`        	   | Main function                                         |
 | `main.h`        	   | Header file with functions prototypes and libraries   |
-| `man_1_simple_shell` | Man page simple shell                                 |
+| `man_1_simple_shell` | Man page Simple Shell                                 |
 
 ### Flowchart:
 ![Flow char simple shell](https://github.com/user-attachments/assets/5313b762-9a78-4f59-83dc-24671f97f653)
