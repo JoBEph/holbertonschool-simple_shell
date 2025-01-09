@@ -2,7 +2,7 @@
 
 /**
  * fork_exe - function to process child and parent
- * @args: array of strings that contains the command and flags
+ * @array: array of strings
  * @path: path env
  * Return: Success of the process (1)
  */

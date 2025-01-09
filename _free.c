@@ -1,14 +1,15 @@
 #include "main.h"
 
 /**
- * free_resources - Frees allocated memory.
+ * _free - Frees allocated memories.
  * @buffer: The input buffer to free.
  * @array: The array of tokens to free.
  * @path: The path string to free.
- */
+*/
+
 void _free(char *buffer, char **array, char *path)
 {
-	int i; 
+	int i;
 
 	if (buffer != NULL)
 	{
