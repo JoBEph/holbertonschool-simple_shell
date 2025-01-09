@@ -13,8 +13,8 @@ char *_getenv(char *name)
 
 	while (environ[index])
 	{
-		if (strncmp(environ[index], name, _strlen(name)) == 0)
-			return (environ[index] + (_strlen(name) + 1));
+		if (strncmp(environ[index], name, strlen(name)) == 0)
+			return (environ[index] + (strlen(name) + 1));
 		++index;
 	}
 	return (NULL);
