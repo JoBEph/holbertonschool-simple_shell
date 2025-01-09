@@ -9,78 +9,54 @@
 */
 
 int main(int argc, char **argv)
-{
-	char *buffer = NULL, *token, *path;
+{	char *buffer = NULL, *token, *path;
 	size_t n = 0;
 	ssize_t rline;
 	int i, status;
 	char **array;
 	pid_t child_pid;
-
 	(void)argc, (void)argv;
 
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
-		{
-			write(STDOUT_FILENO, "C is not fun $ ", 15);
-			fflush(stdout);
-		}
-
+		{	write(STDOUT_FILENO, "C is not fun $ ", 15);
+			fflush(stdout);	}
 		rline = getline(&buffer, &n, stdin);
-
 		if (rline == -1)
-		{
-			free(buffer);
-			exit(0);
-		}
-
+		{	free(buffer);
+			exit(0);	}
 		token = strtok(buffer, " \n");
-
 		array = malloc(sizeof(char *) * 1024);
 		if (array == NULL)
-		{
-			perror("Memory allocation failed");
+		{	perror("Memory allocation failed");
 			free(buffer);
-			exit(1);
-		}
-
+			exit(1);	}
 		i = 0;
 		while (token)
-		{
-			array[i] = token;
+		{	array[i] = token;
 			token = strtok(NULL, " \n");
-			i++;
-		}
-
+			i++;	}
 		array[i] = NULL;
 		path = get_file_path(array[0]);
-
 		child_pid = fork();
-
 		if (child_pid == -1)
-		{
-			perror("Failed to create.");
+		{	perror("Failed to create.");
 			free(array);
 			free(path);
 			free(buffer);
-			exit(41);
-		}
+			exit(41);	}
 		if (child_pid == 0)
 		{
 			if (execve(path, array, NULL) == -1)
-			{
-				perror("Failed to execute");
+			{	perror("Failed to execute");
 				free(path);
 				free(array);
 				free(buffer);
-				exit(97);
-			}
+				exit(97);	}
 		}
 		else
-		{
 			wait(&status);
-		}
 		free(path);
 		free(array);
 	}
