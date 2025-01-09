@@ -24,5 +24,6 @@ int slash(const char *str);
 int _error(void);
 int main(int argc, char **argv);
 char *_getenv(const char *name);
-
+void _free(char *buffer, char **array, char *path);
+void execute_command(char **array);
 #endif
