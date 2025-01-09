@@ -75,10 +75,10 @@ $
 | `_strcmp.c`     	   | Compares 2 strings                                    |
 | `_strcpy.c`     	   | Copy 2 strings                                        |
 | `_strdup.c`          | Pointer to a newly allocated space in memory          |
-| `_free.c`     	     | Free multiple buffers                                 |
+| `_free.c`     	   | Free multiple buffers                                 |
 | `_error.c`           | Error gestion                                         |
 | `get_file.c`         | Executable PATH of the file and environnement         |
-| `token.c`      	     | Strtok function                                       |
+| `token.c`      	   | Strtok function                                       |
 | `_getenv.c`          | Environnement function                                |
 | `main.c`        	   | Main function                                         |
 | `main.h`        	   | Header file with functions prototypes and libraries   |
