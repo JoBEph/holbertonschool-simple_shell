@@ -4,7 +4,7 @@
  * slash - check if the file starts with slash
  * @str: the filename to be checked
  * Return: 1 if yes or 0 if no
-*/
+ */
 
 int slash(const char *str)
 {
@@ -18,7 +18,7 @@ int slash(const char *str)
  * @PATH: full path variable
  * @file_name: the executable file
  * Return: full path to the executable file
-*/
+ */
 
 char *get_file_loc(char *path, char *file_name)
 {
@@ -36,14 +36,11 @@ char *get_file_loc(char *path, char *file_name)
 		perror("Error: strdup failed");
 		return (NULL);
 	}
-
 	token = strtok(path_copy, ":");
-
 	while (token)
 	{
 		path_len = strlen(token);
 		file_len = strlen(file_name);
-
 		path_buffer = realloc(path_buffer, path_len + file_len + 2);
 		if (!path_buffer)
 		{
@@ -54,7 +51,6 @@ char *get_file_loc(char *path, char *file_name)
 		_strcpy(path_buffer, token);
 		path_buffer[path_len] = '/';
 		_strcpy(path_buffer + path_len + 1, file_name);
-
 		if (stat(path_buffer, &file_path) == 0 && access(path_buffer, X_OK) == 0)
 		{
 			free(path_copy);
@@ -66,12 +62,11 @@ char *get_file_loc(char *path, char *file_name)
 	free(path_buffer);
 	return (NULL);
 }
-
 /**
  * get_file_path - get the full path of the file
  * @file_name: Argument name
  * Return: the fulle path argument to the file
-*/
+ */
 
 char *get_file_path(char *file_name)
 {
