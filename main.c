@@ -39,7 +39,8 @@ void execute_command(char **array)
  *Return: 0
  */
 int main(int argc, char **argv)
-{	char *buffer = NULL, *token, **array;
+{	
+	char *buffer = NULL, *token, **array;
 	size_t n = 0;
 	ssize_t rline;
 	int i;
@@ -48,8 +49,7 @@ int main(int argc, char **argv)
 	{	prompt();
 		rline = getline(&buffer, &n, stdin);
 		if (rline == -1)
-		{	printf("\n");
-			free(buffer);
+		{	free(buffer);
 			exit(0);
 		}
 		array = malloc(sizeof(char *) * 1024);
