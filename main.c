@@ -40,13 +40,13 @@ void execute_command(char **array)
  */
 int main(int argc, char **argv)
 {
+	char *token;
 	char *buffer = NULL;
 	size_t n = 0;
 	ssize_t rline;
-	char **array, char *token;
+	char **array;
 	int i;
 	(void)argc, (void)argv;
-
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
