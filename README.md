@@ -52,14 +52,13 @@ man man_1_simple_shell
 ### Usage:
 
 The Simple Shell should work like this in interactive mode (simple commands can be typed directly to the running shell).
-```bash
-$ ./hsh
-($) /bin/ls
-hsh main.c shell.c
-($)
-($) exit
-$
-```
+
+> $ ./hsh  <br />
+> ($) /bin/ls  <br />
+> hsh main.c shell.c  <br />
+> ($)  <br />
+> ($) exit  <br />
+> $  <br />
 
 And also in non-interactive mode (commands can be put into a file and the file can be executed directly).
 ```bash
