@@ -9,6 +9,8 @@
 #include <sys/wait.h>
 #include <string.h>
 
+extern char **environ;
+
 /* Prototypes de function */
 
 int _strlen(char *s);
@@ -21,5 +23,6 @@ char *get_file_path(char *file_name);
 int slash(const char *str);
 int _error(void);
 int main(int argc, char **argv);
+char *_getenv(char *name);
 
 #endif
