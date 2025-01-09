@@ -22,12 +22,16 @@ int slash(const char *str)
 
 char *get_file_loc(char *path, char *file_name)
 {
-	char *path_copy, *token;
+	char *path_copy = NULL, *token = NULL;
 	struct stat file_path;
 	char *path_buffer = NULL;
+	size_t path_len, file_len;
+
+	if (!path || !file_name)
+		return (NULL);
 
 	path_copy = _strdup(path);
-	if (path_copy == NULL)
+	if (!path_copy)
 	{
 		perror("Error: strdup failed");
 		return (NULL);
@@ -37,21 +41,19 @@ char *get_file_loc(char *path, char *file_name)
 
 	while (token)
 	{
-		if (path_buffer)
-		{
-			free(path_buffer);
-			path_buffer = NULL;
-		}
-		path_buffer = malloc(_strlen(token) + _strlen(file_name) + 2);
+		path_len = strlen(token);
+		file_len = strlen(file_name);
+
+		path_buffer = realloc(path_buffer, path_len + file_len + 2);
 		if (!path_buffer)
 		{
-			perror("Error: malloc failed");
+			perror("Error: realloc failed");
 			free(path_copy);
 			return (NULL);
 		}
 		_strcpy(path_buffer, token);
-		_strcat(path_buffer, "/");
-		_strcat(path_buffer, file_name);
+		path_buffer[path_len] = '/';
+		_strcpy(path_buffer + path_len + 1, file_name);
 
 		if (stat(path_buffer, &file_path) == 0 && access(path_buffer, X_OK) == 0)
 		{
@@ -61,8 +63,7 @@ char *get_file_loc(char *path, char *file_name)
 		token = strtok(NULL, ":");
 	}
 	free(path_copy);
-	if (path_buffer)
-		free(path_buffer);
+	free(path_buffer);
 	return (NULL);
 }
 
@@ -74,7 +75,7 @@ char *get_file_loc(char *path, char *file_name)
 
 char *get_file_path(char *file_name)
 {
-	char *path = getenv("PATH");
+	char *path = _getenv("PATH");
 	char *full_path;
 
 	if (slash(file_name) && access(file_name, X_OK) == 0)
@@ -89,7 +90,7 @@ char *get_file_path(char *file_name)
 
 	if (full_path == NULL)
 	{
-		write(2, file_name, _strlen(file_name));
+		write(2, file_name, strlen(file_name));
 		write(2, ": command not found\n", 19);
 		return (NULL);
 	}
