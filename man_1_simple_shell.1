@@ -5,11 +5,16 @@
 
 .SH SYNOPSIS
 C is not fun$ /hsh [options] [file]
+.nf
+#include "main.h"
+.br
+int main(int argc, char **argv);
+.fi
 
 .SH DESCRIPTION
-Simple_Shell is command language interpreter that executes commands read from the stardard input.
+The Shell, named Simple Shell, replicates basic functionalities of a Unix shell, including command execution, path searching. Simple Shell is a command language interpreter that executes commands read from the standard input, tokenize them, execute them in a child process, and handle errors. It also supports executing commands both with absolute paths and by searching the PATH environment variable.
 
-.SH Return Value
+.SH RETURN VALUE
 
 Always returns the status of previously executed command (exit if not command executed).
 
@@ -24,12 +29,31 @@ Function to command invit and return void.
 
 .B _free.c
 
+.SH LIBRARY
+#include <stdio.h>
+.br
+#include <stdlib.h>
+.br
+#include <unistd.h>
+.br
+#include <string.h>
+.fi
+#include <sys/types.h>
+.br
+#include <sys/stat.h>
+.br
+#include <sys/wait.h>
+.br
+
+.SH ENVIRONNEMENT
+extern char **environ; 
+
 .SH History
 .B hsh
-is based on the Thompson Shell program written by Ken Thompson.
+The Simple Shell is based on the Thompson Shell program written by Ken Thompson.
 
 .SH BUGS
 Today i know i hate betty style, we got to many memory leaks.
 
 .SH AUTHORS
-Julie Tolve, Jordan Baroux.
+Julie TOLVE, Jordan BAROUX.
