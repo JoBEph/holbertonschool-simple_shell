@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * token - function tokenise input command
- * @buffer: pointer to the string 
+ * token_input - function tokenise input command
+ * @buffer: pointer to the string
  * Return: array of the string from token
  */
 
