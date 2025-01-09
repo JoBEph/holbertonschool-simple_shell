@@ -15,9 +15,9 @@ int slash(const char *str)
 
 /**
  * get_file_loc - get the executable path of the file
- * @PATH: full path variable
+ * @path: full path variable
  * @file_name: the executable file
- * Return: full path to the executable file
+ * Return: NULL
  */
 
 char *get_file_loc(char *path, char *file_name)
