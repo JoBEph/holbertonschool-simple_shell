@@ -15,12 +15,35 @@ This new project involves rewriting a simple UNIX command interpreter, following
 
 ### Git Clone command:
 ```c
-https://github.com/JoBEph/holbertonschool-simple_shell.git
+git clone  https://github.com/JoBEph/holbertonschool-simple_shell.git
 ```
 ### Compilation command:
 ```c
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
+### Valgrind:
+```c
+echo "ls" | valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./hsh
+```
+```bash
+==1323== Memcheck, a memory error detector
+==1323== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==1323== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==1323== Command: ./hsh
+==1323==
+AUTHORS    _error.c  _getenv.c   hsh     main.h                print_env.c
+README.md  _free.c   get_file.c  main.c  man_1_simple_shell.1  prompt.c
+==1323==
+==1323== HEAP SUMMARY:
+==1323==     in use at exit: 0 bytes in 0 blocks
+==1323==   total heap usage: 8 allocs, 8 frees, 12,854 bytes allocated
+==1323==
+==1323== All heap blocks were freed -- no leaks are possible
+==1323==
+==1323== For lists of detected and suppressed errors, rerun with: -s
+==1323== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+```
+
 ### Man command:
 ```c
 man man_1_simple_shell
