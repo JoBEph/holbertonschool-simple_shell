@@ -40,41 +40,41 @@ void execute_command(char **array)
  */
 int main(int argc, char **argv)
 {
-	char *token;
-	char *buffer = NULL;
+	char *buffer = NULL, *token, **array;
 	size_t n = 0;
 	ssize_t rline;
-	char **array;
 	int i;
 	(void)argc, (void)argv;
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
-		{
-			write(STDOUT_FILENO, "C is not fun $ ", 15);
+		{	write(STDOUT_FILENO, "C is not fun $ ", 15);
 			fflush(stdout);
 		}
 		rline = getline(&buffer, &n, stdin);
 		if (rline == -1)
-		{
-			free(buffer);
+		{	free(buffer);
 			exit(0);
 		}
 		array = malloc(sizeof(char *) * 1024);
 		if (array == NULL)
-		{
-			perror("Memory allocation failed");
+		{	perror("Memory allocation failed");
 			free(buffer);
 			exit(1);
 		}
 		i = 0;
 		token = strtok(buffer, " \n");
 		while (token)
-		{
-			array[i++] = token;
+		{	array[i++] = token;
 			token = strtok(NULL, " \n");
 		}
 		array[i] = NULL;
+		if (strcmp(array[0], "exit") == 0)
+		{
+			free(array);
+			free(buffer);
+			exit(0);
+		}
 		execute_command(array);
 		free(array);
 	}
