@@ -1,59 +1,81 @@
 #include "main.h"
 
 /**
- * main - function to use a simple shell command and execute
- * @argc: void (not use in this function)
- * @argv: void (not use in this function)
- *
- * Return: Success of the execution (0)
-*/
+ *execute_command - execute command.
+ *@array: char
+ *Return: free
+ */
 
+void execute_command(char **array)
+{
+	char *path = get_file_path(array[0]);
+	pid_t child_pid = fork();
+
+	if (child_pid == -1)
+	{
+		perror("Failed to create.");
+		_free(NULL, array, path);
+		exit(41);
+	}
+	if (child_pid == 0)
+	{
+		if (execve(path, array, NULL) == -1)
+		{
+			perror("Failed to execute");
+			_free(NULL, array, path);
+			exit(97);
+		}
+	}
+	else
+	{
+		wait(NULL);
+	}
+	free(path);
+}
+/**
+ *main - main function
+ *@argc: int argc
+ *@argv: double pointer char
+ *Return: 0
+ */
 int main(int argc, char **argv)
-{	char *buffer = NULL, *token, *path;
+{
+	char *buffer = NULL;
 	size_t n = 0;
 	ssize_t rline;
-	int i, status;
-	char **array;
-	pid_t child_pid;
+	char **array, char *token;
+	int i;
 	(void)argc, (void)argv;
 
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
-		{	write(STDOUT_FILENO, "C is not fun $ ", 15);
-			fflush(stdout);	}
+		{
+			write(STDOUT_FILENO, "C is not fun $ ", 15);
+			fflush(stdout);
+		}
 		rline = getline(&buffer, &n, stdin);
 		if (rline == -1)
-		{	free(buffer);
-			exit(0);	}
-		token = strtok(buffer, " \n");
+		{
+			free(buffer);
+			exit(0);
+		}
 		array = malloc(sizeof(char *) * 1024);
 		if (array == NULL)
-		{	perror("Memory allocation failed");
-			free(buffer);
-			exit(1);	}
-		i = 0;
-		while (token)
-		{	array[i] = token;
-			token = strtok(NULL, " \n");
-			i++;	}
-		array[i] = NULL;
-		path = get_file_path(array[0]);
-		child_pid = fork();
-		if (child_pid == -1)
-		{	perror("Failed to create.");
-			_free(buffer, array, path);
-			exit(41);	}
-		if (child_pid == 0)
 		{
-			if (execve(path, array, NULL) == -1)
-			{	perror("Failed to execute");
-				_free(buffer, array, path);
-				exit(97);	}
+			perror("Memory allocation failed");
+			free(buffer);
+			exit(1);
 		}
-		else
-			wait(&status);
-		free(path);
+		i = 0;
+		token = strtok(buffer, " \n");
+		while (token)
+		{
+			array[i++] = token;
+			token = strtok(NULL, " \n");
+		}
+		array[i] = NULL;
+		execute_command(array);
 		free(array);
 	}
 	free(buffer);
