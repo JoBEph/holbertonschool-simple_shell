@@ -19,7 +19,7 @@ void execute_command(char **array)
 	}
 	if (child_pid == 0)
 	{
-		if (execve(path, array, NULL) == -1)
+		if (execve(path, array, environ) == -1)
 		{
 			perror("Failed to execute");
 			_free(NULL, array, path);
