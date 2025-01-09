@@ -72,19 +72,21 @@ $
 
 |  **Functions**  	   | **Description**                                       |
 |:---------------:	   |-------------------------------------------------------|
-| `read_prompt.c` 	   | Read and print an user command                        |
+| `read_line.c` 	   | Read and print an user command                        |
 | `_strcmp.c`     	   | Compares 2 strings                                    |
 | `_strcpy.c`     	   | Copy 2 strings                                        |
 | `_strdup.c`          | Pointer to a newly allocated space in memory          |
 | `_strlen.c`     	   | To print a string                                     |
 | `_strcat.c`          | Function that concatenate two strings                 |
-| `_strtok.c`     	   | Count arguments and break them into tokens            |
+| `_free.c`     	   | free multiple buffers                                 |
 | `get_file.c`         | Executable PATH of the file and environnement         |
-| `_error.c`      	   | Message failure                                       |
-| `execmd.c`      	   | Execute processes                                     |
+| `token.c`      	   | Strtok function                                       |
+| `fork_exe.c`         | fork function                                         |
 | `main.c`        	   | Main function                                         |
 | `main.h`        	   | Header file with functions prototypes and libraries   |
 | `man_1_simple_shell` | Man page simple shell                                 |
+
+### Flowchart:
 
 ### Authors:
 
