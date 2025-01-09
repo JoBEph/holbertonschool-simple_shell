@@ -87,6 +87,7 @@ $
 | `man_1_simple_shell` | Man page simple shell                                 |
 
 ### Flowchart:
+![Flow char simple shell](https://github.com/user-attachments/assets/5313b762-9a78-4f59-83dc-24671f97f653)
 
 ### Authors:
 
