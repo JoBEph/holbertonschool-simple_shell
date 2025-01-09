@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- *_getenv - function to get the value of an env variable
- *@name: name of the environment variable
- *Return: pointer to the value of the variable, or NULL if not found
- */
+ * _getenv - function to get the value of an env variable
+ * @name: name of the environment variable
+ * Return: pointer to the value of the variable, or NULL if not found
+*/
 
 char *_getenv(const char *name)
 {
