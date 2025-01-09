@@ -15,7 +15,7 @@ void execute_command(char **array)
 	{
 		perror("Failed to create.");
 		_free(NULL, array, path);
-		exit(41);
+		exit(1);
 	}
 	if (child_pid == 0)
 	{
@@ -23,7 +23,7 @@ void execute_command(char **array)
 		{
 			perror("Failed to execute");
 			_free(NULL, array, path);
-			exit(97);
+			exit(1);
 		}
 	}
 	else
