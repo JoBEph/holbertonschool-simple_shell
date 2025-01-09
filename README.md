@@ -13,6 +13,10 @@ This new project involves rewriting a simple UNIX command interpreter, following
 - the code use the Betty style. <br />
 - https://github.com/hs-hq/Betty/blob/main/betty-doc.pl <br />
 
+### Git Clone command:
+```c
+https://github.com/JoBEph/holbertonschool-simple_shell.git
+```
 ### Compilation command:
 ```c
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
@@ -72,13 +76,11 @@ $
 
 |  **Functions**  	   | **Description**                                       |
 |:---------------:	   |-------------------------------------------------------|
-| `_strcmp.c`     	   | Compares 2 strings                                    |
-| `_strcpy.c`     	   | Copy 2 strings                                        |
-| `_strdup.c`          | Pointer to a newly allocated space in memory          |
+| `print_env.c`        | Print environment variable                            |
 | `_free.c`     	   | Free multiple buffers                                 |
 | `_error.c`           | Error gestion                                         |
 | `get_file.c`         | Executable PATH of the file and environnement         |
-| `token.c`      	   | Strtok function                                       |
+| `prompt.c`      	   | Fonction create prompt simple shell                   |
 | `_getenv.c`          | Environnement function                                |
 | `main.c`        	   | Main function                                         |
 | `main.h`        	   | Header file with functions prototypes and libraries   |
