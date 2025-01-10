@@ -13,3 +13,13 @@ void prompt(void)
 		fflush(stdout);
 	}
 }
+
+/**
+ * handle_signint - Signal handler for SIGNINT
+ * Return: nothing (void)
+*/
+
+void handle_signint(void)
+{
+	write(STDOUT_FILENO, "\nC is not fun $ ", 16);
+}
