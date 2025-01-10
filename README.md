@@ -91,7 +91,7 @@ And also in non-interactive mode (commands can be put into a file and the file c
 * [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson)
 * [Everything you need to know to start coding your own shell](https://intranet.hbtn.io/concepts/64)
 
-### Files:
+### Files: 📜
 
 |  **Functions**  	   | **Description**                                       |
 |:---------------:	   |-------------------------------------------------------|
@@ -105,11 +105,11 @@ And also in non-interactive mode (commands can be put into a file and the file c
 | `main.h`        	   | Header file with functions prototypes and libraries   |
 | `man_1_simple_shell` | Man page Simple Shell                                 |
 
-### Flowchart:
+### Flowchart: 🚆
 ![Final shell](https://github.com/user-attachments/assets/cdacb858-a2b2-4e54-b416-b3cc8eeb4d17)
 
 
-### Authors:
+### Authors: 🤼‍♀️
 
 * Julie Tolve | [Github](https://github.com/JulieRaph)
 * Jordan Baroux | [Github](https://github.com/JoBEph)
