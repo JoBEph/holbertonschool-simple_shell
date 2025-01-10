@@ -1,4 +1,4 @@
-# Simple Shell Project
+# Simple Shell Project 🌍
 
 ## Description 🧠
 This new project involves rewriting a simple UNIX command interpreter, following the associated guidelines to complete the project. All the files are written in C Language. The shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands.
@@ -71,7 +71,7 @@ And also in non-interactive mode (commands can be put into a file and the file c
 > hsh main.c shell.c test_ls_2  <br />
 > $  <br />
 
-### Requirements: 
+### Requirements: ⚠️
 
 - [x] Allowed editors : vi, vim, emacs <br />
 - [x] All your files will be compiled on Ubuntu 20.04 LTS <br />
