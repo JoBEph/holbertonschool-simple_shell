@@ -1,6 +1,6 @@
 # Simple Shell Project
 
-## Description 
+## Description 🧠
 This new project involves rewriting a simple UNIX command interpreter, following the associated guidelines to complete the project. All the files are written in C Language. The shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands.
 
 ### Environnement: 💻
@@ -21,7 +21,7 @@ git clone  https://github.com/JoBEph/holbertonschool-simple_shell.git
 ```c
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
-### Valgrind:
+### Valgrind: 👮
 ```c
 echo "ls" | valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./hsh
 ```
