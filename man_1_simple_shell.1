@@ -18,16 +18,50 @@ The Shell, named Simple Shell, replicates basic functionalities of a Unix shell,
 
 Always returns the status of previously executed command (exit if not command executed).
 
-.PP
-The
-.B read_line.c
-Function to command invit and return void.
+.SH FILES
+
+.B _getenv.c
+Environment function.
+.br
+char *_getenv(const char *name);
+
+.B print_env.c
+Print environment variable.
+.br
+void print_env(void);
 
 .B get_file.c
+Executable PATH of the file and environment.
+.br
+int slash(const char *str);
+.br
+char *get_path(char *file_name);
 
-.B token.c
+.B _error.c
+Print error message.
+.br
+int _error(void);
 
 .B _free.c
+Free multiple buffer.
+.br
+void _free(char *buffer, char **array, char *path);
+
+.B prompt.c
+Function create prompt simple shell.
+.br
+void prompt(void);
+
+.B main.c
+Main function.
+.br
+int main (int argc, char **argv);
+.br
+void execute_command(char **array);
+
+.B main.h
+Header file with pototypes functions and libraries.
+
 
 .SH LIBRARY
 #include <stdio.h>
@@ -53,7 +87,7 @@ extern char **environ;
 The Simple Shell is based on the Thompson Shell program written by Ken Thompson.
 
 .SH BUGS
-Today i know i hate betty style, we got to many memory leaks.
+Inside the code take care about memory leaks. but it's work.
 
 .SH AUTHORS
 Julie TOLVE, Jordan BAROUX.
