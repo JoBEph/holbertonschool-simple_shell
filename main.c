@@ -46,11 +46,7 @@ int main(int argc, char **argv)
 	int i;
 	(void)argc, (void)argv;
 	while (1)
-	{
-		if (isatty(STDIN_FILENO))
-		{	write(STDOUT_FILENO, "C is not fun $ ", 15);
-			fflush(stdout);
-		}
+	{	prompt();
 		rline = getline(&buffer, &n, stdin);
 		if (rline == -1)
 		{	free(buffer);
@@ -70,10 +66,14 @@ int main(int argc, char **argv)
 		}
 		array[i] = NULL;
 		if (strcmp(array[0], "exit") == 0)
-		{
-			free(array);
+		{	free(array);
 			free(buffer);
 			exit(0);
+		}
+		if (strcmp(array[0], "env") == 0)
+		{	print_env();
+			free(array);
+			continue;
 		}
 		execute_command(array);
 		free(array);
