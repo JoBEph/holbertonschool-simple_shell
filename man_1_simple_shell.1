@@ -21,16 +21,19 @@ Always returns the status of previously executed command (exit if not command ex
 .SH FILES
 
 .B _getenv.c
+.br
 Environment function.
 .br
 char *_getenv(const char *name);
 
 .B print_env.c
+.br
 Print environment variable.
 .br
 void print_env(void);
 
 .B get_file.c
+.br
 Executable PATH of the file and environment.
 .br
 int slash(const char *str);
@@ -38,21 +41,25 @@ int slash(const char *str);
 char *get_path(char *file_name);
 
 .B _error.c
+.br
 Print error message.
 .br
 int _error(void);
 
 .B _free.c
+.br
 Free multiple buffer.
 .br
 void _free(char *buffer, char **array, char *path);
 
 .B prompt.c
+.br
 Function create prompt simple shell.
 .br
 void prompt(void);
 
 .B main.c
+.br
 Main function.
 .br
 int main (int argc, char **argv);
@@ -60,6 +67,7 @@ int main (int argc, char **argv);
 void execute_command(char **array);
 
 .B main.h
+.br
 Header file with pototypes functions and libraries.
 
 
