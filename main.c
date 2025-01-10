@@ -8,7 +8,7 @@
 
 void execute_command(char **array)
 {
-	char *path = get_file_path(array[0]);
+	char *path = get_path(array[0]);
 	pid_t child_pid = fork();
 
 	if (child_pid == -1)
