@@ -1,14 +1,14 @@
 # Simple Shell Project
 
-## Description
+## Description 
 This new project involves rewriting a simple UNIX command interpreter, following the associated guidelines to complete the project. All the files are written in C Language. The shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands.
 
-### Environnement:
+### Environnement: 💻
 
 - Ubuntu 20.04 LTS
 - GitHub
 
-### Betty Style:
+### Betty Style: ✒️
 
 - the code use the Betty style. <br />
 - https://github.com/hs-hq/Betty/blob/main/betty-doc.pl <br />
@@ -84,7 +84,7 @@ And also in non-interactive mode (commands can be put into a file and the file c
 - [x] All your header files should be include guarded <br />
 - [x] Use system calls only when you need to (why?) <br />
 
-### Resources:
+### Resources: 🚩
 
 * [Unix shell](https://en.wikipedia.org/wiki/Unix_shell)
 * [Thompson shell](https://en.wikipedia.org/wiki/Thompson_shell)
