@@ -11,13 +11,14 @@
 
 extern char **environ;
 
-/* Prototypes de function */
+/* Prototypes functions commands */
 
-int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);
-char *_strcat(char *dest, char *src);
+
+/* Prototypes functions execution */
+
 char *get_file_loc(char *PATH, char *file_name);
 char *get_file_path(char *file_name);
 int slash(const char *str);
@@ -26,4 +27,7 @@ int main(int argc, char **argv);
 char *_getenv(const char *name);
 void _free(char *buffer, char **array, char *path);
 void execute_command(char **array);
+void print_env(void);
+void prompt(void);
+
 #endif
