@@ -30,7 +30,7 @@ char *get_file_loc(char *path, char *file_name)
 	if (!path || !file_name)
 		return (NULL);
 
-	path_copy = _strdup(path);
+	path_copy = strdup(path);
 	if (!path_copy)
 	{
 		perror("Error: strdup failed");
@@ -74,7 +74,7 @@ char *get_file_path(char *file_name)
 	char *full_path;
 
 	if (slash(file_name) && access(file_name, X_OK) == 0)
-		return (_strdup(file_name));
+		return (strdup(file_name));
 
 	if (!path)
 	{
